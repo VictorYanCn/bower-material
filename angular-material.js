@@ -4946,14 +4946,14 @@ function MdDialogProvider($$interimElementProvider) {
       }
     };
 
-    function trapFocus(ev) {
-      var dialog = document.querySelector('md-dialog');
-
-      if (dialog && !dialog.contains(ev.target)) {
-        ev.stopImmediatePropagation();
-        dialog.focus();
-      }
-    }
+    //function trapFocus(ev) {
+    //  var dialog = document.querySelector('md-dialog');
+    //
+    //  if (dialog && !dialog.contains(ev.target)) {
+    //    ev.stopImmediatePropagation();
+    //    dialog.focus();
+    //  }
+    //}
 
     // On show method for dialogs
     function onShow(scope, element, options) {
@@ -4988,7 +4988,7 @@ function MdDialogProvider($$interimElementProvider) {
 
       configureAria(element.find('md-dialog'), role, options);
 
-      document.addEventListener('focus', trapFocus, true);
+      //document.addEventListener('focus', trapFocus, true);
 
       if (options.disableParentScroll) {
         options.lastOverflow = options.parent.css('overflow');
@@ -5062,7 +5062,7 @@ function MdDialogProvider($$interimElementProvider) {
 
       applyAriaToSiblings(element, false);
 
-      document.removeEventListener('focus', trapFocus, true);
+      //document.removeEventListener('focus', trapFocus, true);
 
       return dialogPopOut(
         element,
